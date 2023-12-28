@@ -1,0 +1,56 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Country
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+ <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Country</h4>
+                  <p class="card-description">
+                Deactivate Country Here...
+                  </p>
+          
+<div class="row">
+    <div class="col-md-4">
+                    <form class="forms-sample" asp-action="Delete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CountryId" />
+            <div class="form-group">
+                <label asp-for="CountryName" class="control-label">Country Name</label>
+             @*  <input asp-for="CountryName" class="control-label" />*@
+                            @Html.TextBoxFor(m => m.CountryName, new { @readonly="readonly" })
+                <span asp-validation-for="CountryName" class="text-danger"></span>
+            </div>
+
+
+                        <h4 class="card-title text-danger">Check the Box</h4>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                                <input class="form-check-input" asp-for="IsBlock" />Is Block
+                </label>
+            </div>
+           
+                <input type="hidden" asp-for="CreatedAt" class="form-control" />
+             
+
+
+
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+
+
+</div>
+</div>
+</div>

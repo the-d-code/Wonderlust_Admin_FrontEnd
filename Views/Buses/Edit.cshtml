@@ -1,0 +1,65 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Bus
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Blog</h4>
+            <p class="card-description">
+                Edit Blog Here...
+            </p>
+            <div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BusId" />
+           
+            <div class="form-group">
+                <label asp-for="BusName" class="control-label">Bus Name</label>
+                <input asp-for="BusName" class="form-control" />
+                <span asp-validation-for="BusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalSeat" class="control-label">Total Seat</label>
+                <input asp-for="TotalSeat" class="form-control" />
+                <span asp-validation-for="TotalSeat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvailableSeat" class="control-label">Available Seat</label>
+                <input asp-for="AvailableSeat" class="form-control" />
+                <span asp-validation-for="AvailableSeat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label">Image</label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label">Description</label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+           
+                    <input type="hidden" class="form-check-input" asp-for="IsActive" />
+                
+          
+                <input type="hidden" asp-for="CreatedAt" class="form-control" />
+             
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+                <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>
+

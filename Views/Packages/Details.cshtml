@@ -1,0 +1,144 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Package
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Package</h4>
+            <p class="card-description">
+                Details of Package
+            </p>
+            <div class="forms-sample">
+                <dl class="row">
+
+                    <dt class="col-sm-6">
+                        Title
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.PackageName)
+                    </dd>
+
+
+                    <dt class="col-sm-6">
+                        Description
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Description)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        Image
+                    </dt>
+                    <dd class="col-sm-10">
+                        <a href="/images/package/@Model.Image" target="_blank"><img src="~/images/package/@Model.Image" width="250" class="img-thumbnail" /></a>
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        Category
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Category.CategoryName)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        Amount
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Amount)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        From Date
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.FromDate)
+                    </dd>
+                    <dt class="col-sm-6">
+                        To Date
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.ToDate)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        Nights
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.NoOfNights)
+                    </dd>
+                    <dt class="col-sm-6">
+                        Days
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.NoOfDays)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        Bus
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Bus.BusName)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        Hotel
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Hotel.HotelName)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        City
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.City.CityName)
+                    </dd>
+                    <dt class="col-sm-6">
+                        State
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.State.StateName)
+                    </dd>
+                    <dt class="col-sm-6">
+                        Country
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Country.CountryName)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                        Added Date
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.CreatedAt)
+                    </dd>
+
+
+                    <dt class="col-sm-6">
+                        IS Active
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.IsBlock)
+                    </dd>
+
+
+
+
+
+
+
+
+
+                </dl>
+</div>
+<div>
+                <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.PackageId">Edit</a> |
+                <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>

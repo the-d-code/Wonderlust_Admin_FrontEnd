@@ -1,0 +1,76 @@
+﻿@using Microsoft.EntityFrameworkCore.Internal;
+@model IEnumerable<WONDERLUST_PROJECT_ADMINs.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Category</h4>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Sr
+                            </th>
+
+                            <th>
+                                Name
+                            </th>
+                            <th class="col-sm-6">
+                                Description
+                            </th>
+                            <th>
+                                Image
+                            </th>
+                            <th>
+                                Is Active
+                            </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td> @(((Int32)1) + @Model.IndexOf(item)) </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryName)
+                                </td>
+                                <td class="col-sm-6">
+                                    @Html.DisplayFor(modelItem => item.CategoryDescription)
+                                </td>
+                                <td>
+                                    <a href="/images/category/@item.CategoryImage" target="_blank"><img src="~/images/category/@item.CategoryImage" width="500" class="img-thumbnail" /></a>
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsActive)
+                                </td>
+
+
+                                <td>
+                                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a> |
+                                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.CategoryId">Details</a> |
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

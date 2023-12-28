@@ -1,0 +1,57 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Payment
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Payment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PaymetId" />
+            <div class="form-group">
+                <label asp-for="PackageBookingId" class="control-label"></label>
+                <select asp-for="PackageBookingId" class="form-control" asp-items="ViewBag.PackageBookingId"></select>
+                <span asp-validation-for="PackageBookingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PackageId" class="control-label"></label>
+                <select asp-for="PackageId" class="form-control" asp-items="ViewBag.PackageId"></select>
+                <span asp-validation-for="PackageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="PayemtMode" /> @Html.DisplayNameFor(model => model.PayemtMode)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

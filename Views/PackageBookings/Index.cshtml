@@ -1,0 +1,90 @@
+﻿@model IEnumerable<WONDERLUST_PROJECT_ADMINs.Models.PackageBooking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Booking Data</h4>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+    <thead>
+        <tr>
+                            <th>
+                                Booking ID
+                            </th>
+                            <th>
+                                User ID
+                            </th>
+                            <th>
+                               Email
+                            </th>
+                            <th>
+                                Contact Number
+                            </th>
+                            <th>
+                                Booking Date
+                            </th>
+                            <th>
+                                Number Of Tarvellers
+                            </th>
+                            
+                            <th>
+                               Package Name
+                            </th>
+                            <th>
+                                Created At
+                            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PackageBookingId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.UserId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EmailId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ContactNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookingDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NoOfTravelers)
+                                </td>
+                               
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Package.PackageName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedAt)
+                                </td>
+            <td>
+                                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.PackageBookingId">Edit</a> |
+                                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.PackageBookingId">Details</a> |
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PackageBookingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,120 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Travellers
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Travellers Data</h4>
+            <p class="card-description">
+                Details of Travellers
+            </p>
+            <div class="forms-sample">
+                <dl class="row">
+
+                    <dt class="col-sm-6">
+                        Person ID
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.TravellersId)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                       User ID
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.User.UserId)
+                    </dd>
+
+                    <dt class="col-sm-6">
+                       Booking ID
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.PackageBooking.PackageBookingId)
+                    </dd>
+
+                   
+
+                    <dt class="col-sm-6">
+                      Package
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Package.PackageName)
+                    </dd>
+                    <dt class="col-sm-6">
+                      Email
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.PackageBooking.EmailId)
+                    </dd>
+                   
+
+
+
+
+
+
+
+        <dt class = "col-sm-6">
+            Full Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-6">
+           Age
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-6">
+           Gender
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-6">
+          Adhar Number
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AadharCardNo)
+        </dd>
+        <dt class = "col-sm-6">
+           Contact 
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+        <dt class = "col-sm-6">
+           Blood Group
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+        <dt class = "col-sm-6">
+         Birth Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Dob)
+        </dd>
+
+
+        <dt class = "col-sm-6">
+           Adding Date/Time
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+      
+    </dl>
+</div>
+<div>
+                <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.TravellersId">Edit</a> |
+                <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,70 @@
+﻿@using Microsoft.EntityFrameworkCore.Internal;
+@model IEnumerable<WONDERLUST_PROJECT_ADMINs.Models.City>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">City</h4>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Sr
+                            </th> <th>
+                Name
+                            </th>
+                            <th>
+                           State Name
+                            </th>
+            <th>
+                Is Block
+            </th>
+         @*   <th>
+              Created At
+            </th>*@
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+                            <tr>
+                                <td> @(((Int32)1) + @Model.IndexOf(item)) </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.State.StateName)
+                                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsBlock)
+            </td>
+          @*  <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+           *@
+            <td>
+                                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.CityId">Edit</a> |
+                                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.CityId">Details</a> |
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.CityId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

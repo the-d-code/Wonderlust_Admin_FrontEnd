@@ -1,0 +1,67 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Bus
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Bus</h4>
+            <p class="card-description">
+                Details of Bus
+            </p>
+            <div class="forms-sample">
+                <dl class="row">
+        <dt class = "col-sm-6">
+           Bus Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BusName)
+        </dd>
+        <dt class = "col-sm-6">
+           Total Seat
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalSeat)
+        </dd>
+        <dt class = "col-sm-6">
+           Available Seat
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AvailableSeat)
+        </dd>
+        <dt class = "col-sm-6">
+            Image
+        </dt>
+                    <dd class="col-sm-10">
+                        <a href="/images/bus/@Model.Image" target="_blank"><img src="~/images/bus/@Model.Image" width="250" class="img-thumbnail" /></a>
+                    </dd>
+        <dt class = "col-sm-6">
+           Description
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-6">
+           IS Active
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt class = "col-sm-6">
+            Added Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.BusId">Edit</a> |
+    <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>

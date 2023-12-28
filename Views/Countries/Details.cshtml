@@ -1,0 +1,47 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Country
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+
+
+ <div class="col-md-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Country</h4>
+                  <p class="card-description">
+                Details of Country
+                  </p>
+         <div class="forms-sample">
+       <dl class="row">
+        <dt class = "col-sm-6">
+            Country Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CountryName)
+        </dd>
+        <dt class = "col-sm-6">
+          Is Block
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsBlock)
+        </dd>
+        <dt class = "col-sm-6">
+           Added Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+    </dl>
+    </div>
+
+<div>
+                <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.CountryId">Edit</a> |
+    <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+        </div>
+    </div>
+

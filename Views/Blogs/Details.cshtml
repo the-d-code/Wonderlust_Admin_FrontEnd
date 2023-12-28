@@ -1,0 +1,56 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Blog
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Blog</h4>
+            <p class="card-description">
+                Details of Blog
+            </p>
+            <div class="forms-sample">
+                <dl class="row">
+        <dt class = "col-sm-6">
+            Title
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BlogTitle)
+        </dd>
+        <dt class = "col-sm-6">
+            Image
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BlogImage)
+        </dd>
+        <dt class = "col-sm-6">
+            Description
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-6">
+            Is Active
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt class = "col-sm-6">
+            Posted Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+    </dl>
+</div>
+<div>
+                <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.BlogId">Edit</a> |
+                <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>
+

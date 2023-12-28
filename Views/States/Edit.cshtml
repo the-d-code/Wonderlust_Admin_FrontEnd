@@ -1,0 +1,50 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.State
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">State</h4>
+            <p class="card-description">
+                Edit State Here...
+            </p>
+            <div class="row">
+
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="StateId" />
+            <div class="form-group">
+                <label asp-for="StateName" class="control-label">State</label>
+                <input asp-for="StateName" class="form-control" />
+                <span asp-validation-for="StateName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CountryId" class="control-label">Country</label>
+                <select asp-for="CountryId" class="form-control" asp-items="ViewBag.CountryId"></select>
+                <span asp-validation-for="CountryId" class="text-danger"></span>
+            </div>
+
+                        <input type="hidden" class="form-check-input" asp-for="IsBlock" />
+                
+           
+                <input type="hidden" asp-for="CreatedAt" class="form-control" />
+             
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+                <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>
+

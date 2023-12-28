@@ -1,0 +1,49 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Bus
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h4>Bus</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BusId" />
+
+            <input type="hidden" asp-for="BusName" class="form-control" />
+
+            <input type="hidden" asp-for="TotalSeat" class="form-control" />
+
+
+            <input type="hidden" asp-for="AvailableSeat" class="form-control" />
+
+
+            <input type="hidden" asp-for="Image" class="form-control" />
+
+
+            <input type="hidden" asp-for="Description" class="form-control" />
+              
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+
+            <input type="hidden" asp-for="CreatedAt" class="form-control" />
+               
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+

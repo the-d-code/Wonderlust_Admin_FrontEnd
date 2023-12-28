@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WONDERLUST_PROJECT_ADMINs.Models.Category>
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+@*
+
+            <div class="card-body">
+                <h4 class="card-title">Striped Table</h4>
+                <p class="card-description">
+                    Add class <code>.table-striped</code>
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CategoryDescription)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CategoryImage)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IsActive)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CreatedAt)
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CategoryDescription)
+                                    </td>
+                                    <td class="py-1">
+                                        @Html.DisplayFor(modelItem => item.CategoryImage)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IsActive)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+     
+
+*@

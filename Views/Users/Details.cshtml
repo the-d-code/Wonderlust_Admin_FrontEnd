@@ -1,0 +1,62 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.Users
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">User</h4>
+            <p class="card-description">
+                Details of User
+            </p>
+            <div class="forms-sample">
+                <dl class="row">
+                    <dt class="col-sm-6">
+                        @Html.DisplayNameFor(model => model.UserId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.UserId)
+                    </dd>
+                    <dt class="col-sm-6">
+                        Role
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Role)
+                    </dd>
+        <dt class = "col-sm-6">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-6">
+           First Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-6">
+            Last Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+       @* <dt class = "col-sm-6">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>*@
+       
+    </dl>
+</div>
+<div>
+                <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.UserId">Edit</a> |
+                <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>

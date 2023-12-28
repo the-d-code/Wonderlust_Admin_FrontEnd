@@ -1,0 +1,45 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.City
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h4>City</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Delete">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CityId" />
+            <div class="form-group">
+                <label asp-for="CityName" class="control-label">Name</label>
+                @Html.TextBoxFor(m => m.CityName, new { @readonly="readonly" })
+                <span asp-validation-for="CityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateId" class="control-label">State</label>
+                <select asp-for="StateId" class="form-control" asp-items="ViewBag.StateId"></select>
+                <span asp-validation-for="StateId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsBlock" /> @Html.DisplayNameFor(model => model.IsBlock)
+                </label>
+            </div>
+           
+                <input type="hidden" asp-for="CreatedAt" class="form-control" />
+              
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+  <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+

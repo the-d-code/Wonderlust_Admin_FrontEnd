@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WONDERLUST_PROJECT_ADMINs.props" />
+</Project>

@@ -1,0 +1,52 @@
+﻿@model WONDERLUST_PROJECT_ADMINs.Models.City
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">City</h4>
+            <p class="card-description">
+                Details of City
+            </p>
+            <div class="forms-sample">
+                <dl class="row">
+        <dt class = "col-sm-6">
+            City Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+                    <dt class="col-sm-6">
+                        State Name
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.State.StateName)
+                    </dd>
+
+        <dt class = "col-sm-6">
+           IS Block
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IsBlock)
+        </dd>
+        <dt class = "col-sm-6">
+           Added Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+       
+    </dl>
+</div>
+<div>
+                <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.CityId">Edit</a> |
+                <a class="btn btn-warning" asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>
+</div>

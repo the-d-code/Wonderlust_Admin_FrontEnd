@@ -1,0 +1,115 @@
+﻿@model IEnumerable<WONDERLUST_PROJECT_ADMINs.Models.Travellers>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Tourist Data</h4>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+    <thead>
+        <tr>
+
+            <th>
+                Booking ID
+            </th>
+                            <th>
+                          User ID
+                            </th>
+                            <th>
+                                Booking Email
+                            </th>
+                            <th>
+                                Package Name
+                            </th>
+            <th>
+                Full NAme
+            </th>
+            <th>
+                Age
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Adhar Card Number
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Blood Group
+            </th>
+            <th>
+                Date Of Birth
+            </th>
+       
+           
+        
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageBookingId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.UserId)
+                                </td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PackageBooking.EmailId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Package.PackageName)
+                                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AadharCardNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dob)
+            </td>
+           
+          
+           
+         
+            <td>
+                                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.TravellersId">Edit</a> |
+                                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.TravellersId">Details</a> |
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.TravellersId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>

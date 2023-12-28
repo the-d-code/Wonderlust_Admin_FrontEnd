@@ -1,0 +1,82 @@
+﻿@model IEnumerable<WONDERLUST_PROJECT_ADMINs.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Wonderlust.cshtml";
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Create New</a>
+</p>
+
+<div class="col-lg-12 grid-margin stretch-card">
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Payment</h4>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+    <thead>
+        <tr>
+
+                            <th>
+                                Payment ID
+                            </th>
+                            <th>
+                               User ID
+                            </th>
+                            <th>
+                                Booking Email 
+                                </th>
+                       
+            <th>
+                Amount
+            </th>
+            <th>
+                Payment Mode
+            </th>
+           
+            <th>
+               Package Name
+            </th>
+         
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PaymetId)
+                                </td> <td>
+                                    @Html.DisplayFor(modelItem => item.User.UserId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PackageBooking.EmailId)
+                                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PayemtMode)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Package.PackageName)
+            </td>
+            
+          
+            <td>
+                                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.PaymetId">Edit</a> |
+                                    <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.PaymetId">Details</a> |
+                                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.PaymetId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
